@@ -56,6 +56,7 @@ gem "figaro"
 gem "image_processing", "1.12.2"
 gem "pagy"
 gem "rails-i18n"
+gem 'ransack'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html

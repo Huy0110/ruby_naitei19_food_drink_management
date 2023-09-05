@@ -4,6 +4,10 @@ class Cuisine < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :image
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["name", "description", "price", "category_id"] # Liệt kê các thuộc tính bạn muốn tìm kiếm ở đây
+  end
+
   validates :name, presence: true,
     length: {maximum: Settings.validates.cuisines.name.max_length}
   validates :slug, presence: true, uniqueness: true,

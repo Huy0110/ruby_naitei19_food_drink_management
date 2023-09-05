@@ -1,0 +1,42 @@
+<div class="search-form">
+  <h3>Tìm kiếm sản phẩm</h3>
+  <%= search_form_for @q do |f| %>
+    <div class="search-row">
+      <div class="form-group">
+        <%= f.label :name_cont, "Search by name:" %>
+        <%= f.search_field :name_cont, class: "form-control name-search" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description_cont, "Search by description:" %>
+        <%= f.search_field :description_cont, class: "form-control description-search" %>
+      </div>
+    </div>
+    <div class="search-row">
+      <div class="form-group">
+        <%= f.label :category_id_eq, "Category:" %>
+        <%= f.collection_select :category_id_eq, Category.all, :id, :name, { include_blank: true }, class: "form-control category-search" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price_gteq, "Minimum Price:" %>
+        <%= f.number_field :price_gteq, class: "form-control price-search" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :price_lteq, "Maximum Price:" %>
+        <%= f.number_field :price_lteq, class: "form-control price-search" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Search", class: "btn btn-primary search_button" %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<section class="bg-04" id="our-menu">
+  <div class="container">
+    <div class="row">
+     <%= render @cuisines %>
+    </div>
+  </div>
+</section>

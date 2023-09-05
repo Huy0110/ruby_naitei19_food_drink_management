@@ -411,3 +411,41 @@ section {
   margin-bottom: 20px;
   filter: grayscale(100%); /* Biến ảnh thành màu xám */
 }
+
+.search_button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  text-align: center;
+  padding: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.search_button {
+  margin-top: 10px;
+}

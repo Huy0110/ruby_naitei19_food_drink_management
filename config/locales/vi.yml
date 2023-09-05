@@ -7,6 +7,7 @@ vi:
         menu: "Thực đơn"
         events: "Sự kiện"
         contact: "Liên hệ"
+        all_cuisines: "Tat ca cac mon"
       footer:
         address: "Địa chỉ"
         opening_hours: "Giờ mở cửa"

@@ -2,6 +2,7 @@ class Cuisine < ApplicationRecord
   belongs_to :category
   has_many :options, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_one_attached :image
 
   validates :name, presence: true,
     length: {maximum: Settings.validates.cuisines.name.max_length}

@@ -355,3 +355,51 @@ section {
   background-color: #dad9e2; /* Màu nền */
   color: #FFFFFF; /* Màu chữ */
 }
+
+/* Thay đổi kiểu dáng cho liên kết cuisine */
+.cuisine-link {
+  /* Các kiểu dáng tùy ý ở đây */
+  text-decoration: none; /* Loại bỏ gạch chân mặc định */
+  color: #333; /* Màu chữ */
+}
+
+.cuisine-link:hover {
+  /* Kiểu dáng khi rê chuột vào liên kết */
+  color: #FF0000; /* Màu chữ khác khi rê chuột vào */
+}
+
+/* app/assets/stylesheets/cuisines.css */
+
+.cuisine-details {
+  padding: 50px 0;
+}
+
+.cuisine-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.cuisine-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cuisine-description {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.cuisine-discount {
+  font-size: 16px;
+  color: #e74c3c; /* Màu đỏ cho phần giảm giá */
+  margin-top: 10px;
+}
+
+.cuisine-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #27ae60; /* Màu xanh cho giá tiền */
+}

@@ -7,8 +7,8 @@
         <%= image_tag @cuisine.image, class: "cuisine-image" %>
         <h1 class="cuisine-name"><%= @cuisine.name %></h1>
         <p class="cuisine-description"><%= @cuisine.description %></p>
-        <p class="cuisine-discount"><%= @cuisine.discount %> % Discount</p>
-        <p class="cuisine-price"><strong>Price:</strong> <%= number_to_currency(@cuisine.price) %></p>
+        <p class="cuisine-discount"><%= @cuisine.discount %> % <%= t "cuisine.discount" %></p>
+        <p class="cuisine-price"><strong><%= t "cuisine.price" %></strong> <%= number_to_currency(@cuisine.price) %></p>
         <!-- Thêm thông tin chi tiết khác của cuisine nếu cần -->
       </div>
     </div>

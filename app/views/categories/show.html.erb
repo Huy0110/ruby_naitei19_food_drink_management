@@ -24,17 +24,31 @@
      <% @cuisines.each do |cuisine| %>
       <div class="col-md-4 col-sm-6">
         <div class="cuisine-item">
-          <%= link_to cuisine_path(cuisine.slug), class: "cuisine-link" do %>
-            <%= image_tag cuisine.image, class: "cuisine-image" %>
-            <div class="sentence">
-              <h3><%= cuisine.name %> <span><%= number_to_currency(cuisine.price) %></span></h3>
-              <h6><%= cuisine.category.name %></h6>
-              <p><%= cuisine.description %></p>
+          <% if cuisine.available? %>
+            <%= link_to cuisine_path(cuisine.slug), class: "cuisine-link" do %>
+              <%= image_tag cuisine.image, class: "cuisine-image" %>
+              <div class="sentence">
+                <h3><%= cuisine.name %> <span><%= number_to_currency(cuisine.price) %></span></h3>
+                <h6><%= cuisine.category.name %></h6>
+                <p><%= cuisine.description %></p>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="cuisine-not-available">
+            <%= link_to cuisine_path(cuisine.slug), class: "cuisine-link" do %>
+              <%= image_tag cuisine.image, class: "cuisine-image-not-available" %>
+              <div class="sentence">
+                <h3><%= cuisine.name %> <span><%= number_to_currency(cuisine.price) %></span></h3>
+                <h6><%= cuisine.category.name %></h6>
+                <p><%= cuisine.description %></p>
+              </div>
+            <% end %>
             </div>
           <% end %>
         </div>
       </div>
     <% end %>
+
 
 
     </div>

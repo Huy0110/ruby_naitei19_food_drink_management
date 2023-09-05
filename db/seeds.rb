@@ -28,4 +28,15 @@ cuisine2 = Cuisine.create(
 )
 cuisine2.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
+cuisine3 = Cuisine.create(
+  name: "Cuisine 3",
+  slug: "cuisine-3",
+  description: "Description for Cuisine 3",
+  price: 12,
+  discount: 0,
+  available: false,
+  category: category1 # Liên kết cuisine với category đã tạo
+)
+cuisine3.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
+
 # Add more cuisines with unique images as needed

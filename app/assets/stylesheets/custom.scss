@@ -403,3 +403,11 @@ section {
   margin-top: 10px;
   color: #27ae60; /* Màu xanh cho giá tiền */
 }
+
+/* Áp dụng màu xám cho ảnh */
+.cuisine-image-not-available {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  filter: grayscale(100%); /* Biến ảnh thành màu xám */
+}

@@ -4,8 +4,8 @@ class Cuisine < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :image
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["name", "description", "price", "category_id"] # Liệt kê các thuộc tính bạn muốn tìm kiếm ở đây
+  def self.ransackable_attributes _auth_object = nil
+    %w(name description price category_id)
   end
 
   validates :name, presence: true,

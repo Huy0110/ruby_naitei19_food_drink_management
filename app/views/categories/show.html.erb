@@ -1,16 +1,39 @@
 <!-- app/views/categories/show.html.erb -->
-<div class="category-list">
-  <ul>
-    <% @categories.each do |category| %>
-      <li><%= link_to category.name, category_path(category.slug) %></li>
-    <% end %>
-  </ul>
-</div>
 
-<div class="cuisine-list">
-  <ul>
-    <% @cuisines.each do |cuisine| %>
-      <li><%= link_to cuisine.name, cuisine_path(cuisine.slug) %></li>
-    <% end %>
-  </ul>
-</div>
+
+<section class="bg-04" id="our-menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">
+          <span>Menu</span>
+          <h2>Explore Our Best Menu</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores officiis explicabo blanditiis consequuntur fugit fugiat, incidunt totam consectetur veritatis minus corporis doloribus, qui maxime velit nesciunt, officia praesentium odit facilis.</p>
+        </div>
+      </div>
+
+      <div class="category-list">
+        <% @categories.each do |category| %>
+          <div class="category-item <%= 'selected' if category.slug == params[:slug] %>">
+            <%= link_to category.name, category_path(category.slug) %>
+          </div>
+        <% end %>
+      </div>
+
+
+      <% @cuisines.each do |cuisine| %>
+        <div class="col-md-4 col-sm-6">
+          <div class="cuisine-item">
+            <%= image_tag "https://www.thecountrycook.net/wp-content/uploads/2021/02/thumbnail-Southern-Fried-Chicken-500x500.jpg", class: "cuisine-image" %>
+            <div class="sentence">
+              <h3><%= cuisine.name %> <span><%= number_to_currency(cuisine.price) %></span></h3>
+              <h6><%= cuisine.category.name %></h6>
+              <p><%= cuisine.description %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</section>

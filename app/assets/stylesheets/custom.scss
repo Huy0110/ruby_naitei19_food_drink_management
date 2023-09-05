@@ -292,3 +292,66 @@ section {
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* CSS để sắp xếp các category thành một hàng ngang */
+.category-list {
+  display: flex;
+  justify-content: space-between; /* Phân cách đều giữa các category */
+  flex-wrap: wrap; /* Cho phép các category chuyển dòng khi không đủ không gian */
+}
+
+.category-item {
+  flex: 0 0 calc(33.33% - 10px); /* Số lượng category trên mỗi hàng, có khoảng cách 10px giữa chúng */
+  margin-bottom: 10px; /* Khoảng cách dưới mỗi category */
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0; /* Viền xung quanh các category */
+  padding: 10px;
+}
+
+/* Để làm cho category trở nên hấp dẫn hơn */
+.category-item:hover {
+  background-color: #f5f5f5; /* Màu nền khi hover */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* CSS để tạo giao diện cho mỗi item cuisine */
+.cuisine-item {
+  margin-bottom: 20px; /* Khoảng cách giữa các item */
+  border: 1px solid #e0e0e0; /* Viền xung quanh các item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+  transition: box-shadow 0.2s ease-in-out; /* Hiệu ứng bóng đổ khi hover */
+}
+
+.cuisine-item:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ lớn hơn khi hover */
+}
+
+.cuisine-image {
+  max-width: 100%; /* Ảnh tự thích nghi với kích thước của thẻ cha */
+}
+
+.sentence {
+  padding: 15px;
+}
+
+.sentence h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.sentence h6 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.sentence p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Thay đổi màu nền và màu chữ cho category được chọn */
+.category-item.selected {
+  background-color: #dad9e2; /* Màu nền */
+  color: #FFFFFF; /* Màu chữ */
+}

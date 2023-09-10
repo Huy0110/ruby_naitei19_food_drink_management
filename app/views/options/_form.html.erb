@@ -1,0 +1,16 @@
+<%= form_with(model: @option, url: options_path, local: true) do |form| %>
+  <% cuisine = option.cuisine %>
+  <h3> <%= t("order.option_for") cuisine.name %>:</h3>
+
+  <% cuisine.options.each do |option| %>
+    <div class="form-check">
+      <!-- Sử dụng checkbox để chọn option -->
+      <%= form.check_box :selected_option_ids, { multiple: true, class: 'form-check-input' }, option.id %>
+      <%= form.label nil, option.name, class: 'form-check-label' %>
+      <span class="option-price">Price: <%= number_to_currency(option.price) %></span>
+    </div>
+  <% end %>
+  <%= form.hidden_field :cuisine_id, value: cuisine.id %>
+  <%= form.submit t("order.add_order"), class: "btn btn-primary" %>
+  <%= button_tag t("order.close"), type: "button", class: "btn btn-secondary close-popup-button" %>
+<% end %>

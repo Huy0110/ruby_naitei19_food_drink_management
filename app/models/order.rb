@@ -9,5 +9,5 @@ length: {maximum: Settings.validates.orders.address.max_length}
   validates :phone, presence: true,
 length: {maximum: Settings.validates.orders.phone.max_length}
   validates :status, presence: true
-  validats :note, length: {maximum: Settings.validates.orders.note.max_length}
+  validates :note, length: {maximum: Settings.validates.orders.note.max_length}
 end
